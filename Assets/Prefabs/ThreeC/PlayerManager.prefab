@@ -60,5 +60,5 @@ MonoBehaviour:
   Cam: {fileID: 0}
   CamPoint: {fileID: 0}
   CamPosition: {fileID: 0}
-  typeOne: 1
-  typeTwo: 4
+  typeOne: 0
+  typeTwo: 5

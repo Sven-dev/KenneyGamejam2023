@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -112,6 +113,15 @@ public class PlayerManager : MonoBehaviour
     public void ArrivalMessage()
     {
 
+    }
+
+    public Vector3 GetPlayerPosition()
+    {
+        if (controlledUnit != null)
+        {
+            return controlledUnit.transform.position;
+        }
+        return Vector3.zero;
     }
 }
 
