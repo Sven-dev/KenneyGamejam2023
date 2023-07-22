@@ -32,8 +32,10 @@ public class PlayerManager : MonoBehaviour
 
     PlayerControls playerControls = null;
 
+    Inventory inventory = new Inventory();
+
     [SerializeField]
-    ControllerUnit controlledUnit = null;
+    Unit controlledUnit = null;
 
     private void Start()
     {
@@ -76,7 +78,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (controlledUnit)
         {
-            controlledUnit.GoTo(_at, _destination);
+            controlledUnit.GetTo(_at, _destination);
         }
     }
 
@@ -95,6 +97,16 @@ public class PlayerManager : MonoBehaviour
 
             playerControls.SetActionType(_one, _type);
         }
+    }
+
+    public bool InputToInventory(Unit _unit, GameObject _tower)
+    {
+        if (_unit == controlledUnit && inventory != null)
+        {
+            return inventory.AddToInventory(_tower);
+        }
+
+        return false;
     }
 
     public void ArrivalMessage()

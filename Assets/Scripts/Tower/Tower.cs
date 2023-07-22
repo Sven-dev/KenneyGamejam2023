@@ -106,6 +106,15 @@ public class Tower : MonoBehaviour
 
         //Needs some sort of indication
     }
+
+    public Element GetElement()
+    {
+        return Element;
+    }
+    public Attack GetAttack()
+    {
+        return Type;
+    }
 }
 
 public enum Attack

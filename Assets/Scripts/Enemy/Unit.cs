@@ -36,6 +36,7 @@ public class Unit : MonoBehaviour
         if (agent != null)
         {
             agent.SetDestination(_at);
+
         }
 
         destination = _destination;
@@ -47,6 +48,25 @@ public class Unit : MonoBehaviour
         {
             Arrival();
             
+        }
+        else
+        {
+            IInteractable interactable = other.gameObject.GetComponent<IInteractable>();
+            if (interactable != null)
+            {
+                TowerPickup tp = other.gameObject.GetComponent<TowerPickup>();
+                if (tp != null)
+                {
+                    if (PlayerManager.Instance != null)
+                    {
+                        if(PlayerManager.Instance.InputToInventory(this, other.gameObject))
+                        {
+                            //success inserted to Inventory
+                            tp.RemovePickUP();
+                        }
+                    }
+                }
+            }
         }
     }
 

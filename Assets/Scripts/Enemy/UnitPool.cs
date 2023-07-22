@@ -16,17 +16,17 @@ public class UnitPool : MonoBehaviour
         
     }
 
-    public ControllerUnit GetUnit()
+    public Unit GetUnit()
     {
         Transform trns = null;
-        ControllerUnit unit = null;
+        Unit unit = null;
 
         for (int i = 0; i < transform.childCount; i++)
         {
             trns = transform.GetChild(i);
             if (trns != null && !trns.gameObject.activeSelf)
             {
-                unit = trns.GetComponent<ControllerUnit>();
+                unit = trns.GetComponent<Unit>();
                 if (unit != null)
                 {
                     i = transform.childCount;
@@ -40,7 +40,7 @@ public class UnitPool : MonoBehaviour
         {
             Transform egg = Instantiate(trns);
             egg.transform.SetParent(transform);
-            unit = egg.GetComponent<ControllerUnit>();
+            unit = egg.GetComponent<Unit>();
 
             return unit;
         }
