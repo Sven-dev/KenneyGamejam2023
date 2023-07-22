@@ -11,15 +11,7 @@ public class GridGenerator : MonoBehaviour
     [SerializeField] private int TowerDefenseSize;
     [Space]
     [Range(0, 1)]
-    [SerializeField] private float GrassTerrainChance;
-    [Range(0, 1)]
-    [SerializeField] private float IceTerrainChance;
-    [Range(0, 1)]
-    [SerializeField] private float DesertTerrainChance;
-    [Space]
-    [Range(0, 1)]
     [SerializeField] private float TreeChance;
-
 
     [SerializeField] private int GridSize = 10;
     [SerializeField] private Transform GridPrefab;
@@ -30,8 +22,9 @@ public class GridGenerator : MonoBehaviour
     [SerializeField] private List<Tile> DesertTreePrefabs;
     [Space]
     [SerializeField] private List<List<Tile>> Grid = new List<List<Tile>>();
+    [Space]
+    [SerializeField] private List<Tower> Towers;
 
-    public bool Test = false;
     public bool GridGenerated = false;
 
     private Texture2D TerrainPerlin;
@@ -50,21 +43,6 @@ public class GridGenerator : MonoBehaviour
         }
 
         GenerateGridStructure();
-    }
-
-    private void Update()
-    {
-        if (Test)
-        {
-            Test = false;
-
-            foreach(Transform child in transform)
-            {
-                Destroy(child.gameObject);
-            }
-
-            GenerateGridStructure();
-        }
     }
 
     public void GetTerrainPerlin(Texture2D perlinTexture)
@@ -97,14 +75,11 @@ public class GridGenerator : MonoBehaviour
                 float xtemp = (GridSize - Mathf.Abs(x - GridSize / 2)) / 100f;
                 float grassWeight = Mathf.Clamp01(((ztemp + xtemp) / 2) - 0);
 
-
-                print(grassWeight);
-
-                //Center area (just spawn grass tiles)
-                if (z > GridSize / 2 - TowerDefenseSize / 2 && z < GridSize / 2 + TowerDefenseSize / 2 &&
-                    x > GridSize / 2 - TowerDefenseSize / 2 && x < GridSize / 2 + TowerDefenseSize / 2)
+                //Center area (don't spawn anything)
+                if (z >= GridSize / 2 - TowerDefenseSize / 2 && z <= GridSize / 2 + TowerDefenseSize / 2 &&
+                    x >= GridSize / 2 - TowerDefenseSize / 2 && x <= GridSize / 2 + TowerDefenseSize / 2)
                 {
-                    prefab = TerrainPrefabs[0];
+                    continue;
                 }
                 else if (grassWeight > 0.95f)
                 {
