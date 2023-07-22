@@ -55,10 +55,9 @@ public class GridGenerator : MonoBehaviour
         TreePerlin = perlinTexture;
     }
 
-    public Transform GetGridPosition(int z, int x)
+    public Tile GetGridPosition(int z, int x)
     {
-        print(Grid[z][x].name);
-        return Grid[z][x].transform;
+        return Grid[z][x];
     }
 
     private void GenerateGridStructure()
@@ -70,6 +69,7 @@ public class GridGenerator : MonoBehaviour
             for (int x = 0; x < GridSize; x++)
             {
                 Tile prefab;
+                bool hasTree = false;
 
                 float ztemp = (GridSize - Mathf.Abs(z - GridSize / 2)) / 100f;
                 float xtemp = (GridSize - Mathf.Abs(x - GridSize / 2)) / 100f;
@@ -81,7 +81,7 @@ public class GridGenerator : MonoBehaviour
                 {
                     continue;
                 }
-                else if (grassWeight > 0.95f)
+                else if (grassWeight > 0.97f)
                 {
                     prefab = TerrainPrefabs[0];
                 }
@@ -103,11 +103,13 @@ public class GridGenerator : MonoBehaviour
                             {
                                 //Bound
                                 prefab = DesertTreePrefabs[Random.Range(0, DesertTreePrefabs.Count)];
+                                hasTree = true;
                             }
                             else if (treePerlinValue > 1-TreeChance)
                             {
                                 //Trees
                                 prefab = DesertTreePrefabs[Random.Range(0, DesertTreePrefabs.Count)];
+                                hasTree = true;
                             }
                             else
                             {
@@ -131,11 +133,13 @@ public class GridGenerator : MonoBehaviour
                             {
                                 //Bound
                                 prefab = GrassTreePrefabs[Random.Range(0, GrassTreePrefabs.Count)];
+                                hasTree = true;
                             }
                             else if (treePerlinValue > 1 - TreeChance)
                             {
                                 //Trees
                                 prefab = GrassTreePrefabs[Random.Range(0, GrassTreePrefabs.Count)];
+                                hasTree = true;
                             }
                             else
                             {
@@ -159,11 +163,13 @@ public class GridGenerator : MonoBehaviour
                             {
                                 //Bound
                                 prefab = IceTreePrefabs[Random.Range(0, IceTreePrefabs.Count)];
+                                hasTree = true;
                             }
                             else if (treePerlinValue > 1 - TreeChance)
                             {
                                 //Trees
                                 prefab = IceTreePrefabs[Random.Range(0, IceTreePrefabs.Count)];
+                                hasTree = true;
                             }
                             else
                             {
@@ -179,11 +185,50 @@ public class GridGenerator : MonoBehaviour
                 Vector3 rotationVector = Vector3.up * 90 * rnd;
                 Quaternion rotation = Quaternion.Euler(rotationVector);
 
-                Tile tile = Instantiate(prefab, Vector3.forward * z + Vector3.right * x, rotation, row);           
+                Tile tile = Instantiate(prefab, Vector3.forward * z + Vector3.right * x, rotation, row);
+                tile.HasTree = hasTree;
                 temp.Add(tile);
             }
 
             Grid.Add(temp);
+        }
+
+        int amountOfTowers = 0;
+        while (amountOfTowers < 15)
+        {
+            int rndx = Random.Range(0, GridSize);
+            int rndz = Random.Range(0, GridSize);
+
+            Tile randomtile = GetGridPosition(rndz, rndx);
+
+            if (!randomtile.HasTree)
+            {
+                Transform tower;
+                switch (randomtile.TerrainType)
+                {
+                    case Element.Normal:
+                        int rnd1 = Random.Range(0, 2);
+                        tower = Towers[rnd1];
+                        break;
+
+                    case Element.Fire:
+                        int rnd2 = Random.Range(2, 4);
+                        tower = Towers[rnd2];
+                        break;
+
+                    case Element.Ice:
+                        int rnd3 = Random.Range(4, 6);
+                        tower = Towers[rnd3];
+                        break;
+
+                    default:
+                        throw new System.Exception("What the fuck is this element?");
+                }
+
+                Instantiate(tower, randomtile.transform.position + Vector3.up * 0.5f, Quaternion.identity);
+
+                amountOfTowers++;
+            }  
         }
 
         GridGenerated = true;

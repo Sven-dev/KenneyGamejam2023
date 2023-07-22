@@ -211,6 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TerrainType: 0
+  HasTree: 0
 --- !u!208 &6857100869096685522
 NavMeshObstacle:
   m_ObjectHideFlags: 0

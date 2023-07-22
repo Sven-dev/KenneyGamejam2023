@@ -172,8 +172,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7982397985662853109, guid: aec951036ade12340bbd17ca7627630f, type: 3}
       propertyPath: Towers.Array.size
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 7982397985662853109, guid: aec951036ade12340bbd17ca7627630f, type: 3}
+      propertyPath: Towers.Array.data[0]
+      value: 
+      objectReference: {fileID: 1777382921415831218, guid: e1283bfc681e11940978d206982d2120, type: 3}
+    - target: {fileID: 7982397985662853109, guid: aec951036ade12340bbd17ca7627630f, type: 3}
+      propertyPath: Towers.Array.data[1]
+      value: 
+      objectReference: {fileID: 1441151393823505048, guid: caf72ceb60a9e1f4d8408380bb3e1407, type: 3}
+    - target: {fileID: 7982397985662853109, guid: aec951036ade12340bbd17ca7627630f, type: 3}
+      propertyPath: Towers.Array.data[2]
+      value: 
+      objectReference: {fileID: 7805348790629376732, guid: ec7248059476048448816592336ec17e, type: 3}
+    - target: {fileID: 7982397985662853109, guid: aec951036ade12340bbd17ca7627630f, type: 3}
+      propertyPath: Towers.Array.data[3]
+      value: 
+      objectReference: {fileID: 6261510140520460532, guid: 621934e884596ea4aaf770866da771c0, type: 3}
+    - target: {fileID: 7982397985662853109, guid: aec951036ade12340bbd17ca7627630f, type: 3}
+      propertyPath: Towers.Array.data[4]
+      value: 
+      objectReference: {fileID: 381170819640188871, guid: def4d080269883040b56a3888b9780fd, type: 3}
+    - target: {fileID: 7982397985662853109, guid: aec951036ade12340bbd17ca7627630f, type: 3}
+      propertyPath: Towers.Array.data[5]
+      value: 
+      objectReference: {fileID: 264116210044014456, guid: c8ff14da4be316546a582697712ec77e, type: 3}
     - target: {fileID: 7982397985662853109, guid: aec951036ade12340bbd17ca7627630f, type: 3}
       propertyPath: IceTreePrefabs.Array.data[0]
       value: 
@@ -745,7 +769,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2007146403374886730, guid: 0eefd29398e2c8a4b84208c82a90d73a, type: 3}
       propertyPath: TimeBetweenWaves
-      value: 15
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 2007146403374886730, guid: 0eefd29398e2c8a4b84208c82a90d73a, type: 3}
       propertyPath: TimeBetweenEnemySpawns
@@ -809,7 +833,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2007146403483187816, guid: 0eefd29398e2c8a4b84208c82a90d73a, type: 3}
       propertyPath: TimeBetweenWaves
-      value: 15
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 2007146403483187816, guid: 0eefd29398e2c8a4b84208c82a90d73a, type: 3}
       propertyPath: TimeBetweenEnemySpawns
@@ -953,7 +977,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2007146405172154639, guid: 0eefd29398e2c8a4b84208c82a90d73a, type: 3}
       propertyPath: TimeBetweenWaves
-      value: 15
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 2007146405172154639, guid: 0eefd29398e2c8a4b84208c82a90d73a, type: 3}
       propertyPath: TimeBetweenEnemySpawns
