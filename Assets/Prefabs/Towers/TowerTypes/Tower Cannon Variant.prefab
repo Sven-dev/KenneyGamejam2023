@@ -99,7 +99,7 @@ PrefabInstance:
     - target: {fileID: 3733376821963204121, guid: 90a6cfb90fd0ec54b9b1016244c593c7, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 457b6f6687f54e54ca52ab540fdf5f09, type: 2}
+      objectReference: {fileID: 2100000, guid: 7ea2feaec1c727d41b9c1e28c95d233d, type: 2}
     - target: {fileID: 3733376821963204121, guid: 90a6cfb90fd0ec54b9b1016244c593c7, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
@@ -107,7 +107,7 @@ PrefabInstance:
     - target: {fileID: 3733376821963204121, guid: 90a6cfb90fd0ec54b9b1016244c593c7, type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
-      objectReference: {fileID: 2100000, guid: 457b6f6687f54e54ca52ab540fdf5f09, type: 2}
+      objectReference: {fileID: 2100000, guid: 7ea2feaec1c727d41b9c1e28c95d233d, type: 2}
     - target: {fileID: 5610258257420496103, guid: 90a6cfb90fd0ec54b9b1016244c593c7, type: 3}
       propertyPath: m_Name
       value: Tower Cannon Variant

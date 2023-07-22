@@ -4,3 +4,9 @@ public enum Element
     Fire,
     Ice
 }
+
+public enum TowerType
+{
+    Projectile,
+    AreaOfEffect
+}

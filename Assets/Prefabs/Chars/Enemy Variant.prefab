@@ -23,6 +23,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4342403805718608018, guid: 27f19277411816f469807bf76b85149f, type: 3}
+      propertyPath: m_WalkableMask
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 7136575088807637220, guid: 27f19277411816f469807bf76b85149f, type: 3}
       propertyPath: m_RootOrder
       value: 0

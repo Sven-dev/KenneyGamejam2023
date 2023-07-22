@@ -5,7 +5,8 @@ public enum CommandType
     Nothing,
     MoveCamera,
     RotateCamera,
-    Information,
+    BuildMode,
+    StopBuildMode,
     CommandUnit
 }
 
@@ -15,13 +16,13 @@ public class PlayerControls : MonoBehaviour
     Camera Cam = null;
 
     [SerializeField]    Transform CamPoint = null;
-    [SerializeField]    Transform CamLength = null;
+    [SerializeField]    Transform CamPosition = null;
 
     private GameplayControls inputControls = null;
 
     bool isSprinting = true;
 
-    float MoveSpeed = 8.0f, SprintSpeed = 2.5f, ZoomSpeed = 5.0f;
+    float MoveSpeed = 12.0f, SprintSpeed = 2.5f, ZoomSpeed = 0.0f;
 
     public CommandType typeOne = CommandType.MoveCamera;
     public CommandType typeTwo = CommandType.CommandUnit;
@@ -95,8 +96,11 @@ public class PlayerControls : MonoBehaviour
             case CommandType.Nothing:       break;
             case CommandType.MoveCamera:    break;
             case CommandType.RotateCamera:  break;
-            case CommandType.Information:
+            case CommandType.BuildMode:
                 Select();
+                break;
+            case CommandType.StopBuildMode:
+                StopBuildMode();
                 break;
             case CommandType.CommandUnit:
                 Command();
@@ -116,6 +120,9 @@ public class PlayerControls : MonoBehaviour
                 break;
             case CommandType.RotateCamera:
                 isTurnActive = inputControls.Player.ActionOne.ReadValue<float>() > 0.1f;
+                break;
+            case CommandType.BuildMode:
+                //TODO: Set Green Tower where mouse is pointing
                 break;
             default:
                 break;
@@ -154,7 +161,7 @@ public class PlayerControls : MonoBehaviour
     
     private void SetCameraTR()
     {
-        towards = CamPoint.position - CamLength.position;
+        towards = CamPoint.position - CamPosition.position;
         towards.y = 0.0f;
         towards.Normalize();
 
@@ -212,14 +219,14 @@ public class PlayerControls : MonoBehaviour
                 if (Cam.orthographic)
                 {
                     float size = Cam.orthographicSize;
-                    size = Mathf.Clamp(size + -Mathf.Sign(zoom) * ZoomSpeed, 4.0f, 40.0f);
+                    size = Mathf.Clamp(size + -Mathf.Sign(zoom) * ZoomSpeed, 5.0f, 40.0f);
                     Cam.orthographicSize = size;
                 }
                 else
                 {
-                    Vector3 length = CamLength.localPosition;
-                    length.y = Mathf.Clamp(length.y + -Mathf.Sign(zoom) * ZoomSpeed, 4.0f, 60.0f);
-                    CamLength.localPosition = length;
+                    Vector3 length = CamPosition.localPosition;
+                    length.y = Mathf.Clamp(length.y + -Mathf.Sign(zoom) * ZoomSpeed, 5.0f, 60.0f);
+                    CamPosition.localPosition = length;
                 }
             }
         }
@@ -228,7 +235,7 @@ public class PlayerControls : MonoBehaviour
 
     private void UpdateMovement(Vector3 _moveTo)
     {
-        if (CamPoint)
+        if (CamPoint && _moveTo.magnitude > 0.0f)
         {
             if (isSprinting)
                 _moveTo *= SprintSpeed;
@@ -272,12 +279,12 @@ public class PlayerControls : MonoBehaviour
             camED = towards * (mouseSTpos.y - _mousePoint.y) + right * (mouseSTpos.x - _mousePoint.x);
         }
 
-        if (CamLength)
+        if (CamPosition)
         {
-            camED *= CamLength.localPosition.y / 45;
+            camED *= CamPosition.localPosition.y / 45;
         }
 
-        CamPoint.position = camST + camED;
+        CamPoint.position = camST + camED * 3;
     }
     private void DragTurn(Vector2 _mousePoint)
     {
@@ -359,11 +366,6 @@ public class PlayerControls : MonoBehaviour
                     }
                 }
             }
-            else
-            {
-
-
-            }
         }
     }
 
@@ -375,6 +377,22 @@ public class PlayerControls : MonoBehaviour
     private void OpenMenu()
     {
 
+    }
+
+    public void GoBuildMode()
+    {
+        SetActionType(true, CommandType.BuildMode);
+        SetActionType(false, CommandType.StopBuildMode);
+    }
+    public void StopBuildMode()
+    {
+        SetActionType(true, CommandType.MoveCamera);
+        SetActionType(false, CommandType.CommandUnit);
+
+        if (CanvasManager.Instance != null)
+        {
+            CanvasManager.Instance.UndoCall();
+        }
     }
 
     #endregion
