@@ -139,8 +139,10 @@ public class PlayerControls : MonoBehaviour
                 break;
         }
 
-        CameraMove(isMoveActive, isTurnActive);
-        CameraTurns();
+        //CameraMove(isMoveActive, isTurnActive);
+        //CameraTurns();
+
+        CameraFollow();
     }
 
     #endregion
@@ -240,7 +242,14 @@ public class PlayerControls : MonoBehaviour
             if (isSprinting)
                 _moveTo *= SprintSpeed;
 
-            CamPoint.position += _moveTo * MoveSpeed * Time.unscaledDeltaTime;
+            //CamPoint.position += _moveTo * MoveSpeed * Time.unscaledDeltaTime;
+        }
+    }
+    private void CameraFollow()
+    {
+        if (CamPoint && PlayerManager.Instance)
+        {
+            CamPoint.position = PlayerManager.Instance.GetPlayerPosition();
         }
     }
 
@@ -284,7 +293,7 @@ public class PlayerControls : MonoBehaviour
             camED *= CamPosition.localPosition.y / 45;
         }
 
-        CamPoint.position = camST + camED * 3;
+        //CamPoint.position = camST + camED * 3;
     }
     private void DragTurn(Vector2 _mousePoint)
     {
@@ -301,7 +310,7 @@ public class PlayerControls : MonoBehaviour
         turnResult.x = Mathf.Clamp(turnResult.x, 10.0f, 75.0f);
         turnResult.y = (turnResult.y + 360) % 360;
 
-        CamPoint.localEulerAngles = turnResult;
+        //CamPoint.localEulerAngles = turnResult;
     }
 
     #endregion
@@ -386,7 +395,7 @@ public class PlayerControls : MonoBehaviour
     }
     public void StopBuildMode()
     {
-        SetActionType(true, CommandType.MoveCamera);
+        SetActionType(true, CommandType.Nothing);
         SetActionType(false, CommandType.CommandUnit);
 
         if (CanvasManager.Instance != null)
