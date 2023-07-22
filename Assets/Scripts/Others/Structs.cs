@@ -6,11 +6,3 @@ public struct Stats
 {
     
 }
-
-public enum Elements
-{
-    Neutral,
-    Fire,
-    Ice
-
-}

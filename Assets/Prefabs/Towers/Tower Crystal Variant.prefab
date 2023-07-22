@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1068241469357809694}
   - component: {fileID: 3267213640239969429}
   - component: {fileID: 6353178418626847767}
-  - component: {fileID: 7125960688188312424}
   m_Layer: 0
   m_Name: Crystal E
   m_TagString: Untagged
@@ -82,19 +81,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7125960688188312424
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1394908038783831340}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3027749112159872619
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,7 +92,6 @@ GameObject:
   - component: {fileID: 480154115538454247}
   - component: {fileID: 5321527886537278021}
   - component: {fileID: 4849962932966464167}
-  - component: {fileID: 7382140179128399360}
   m_Layer: 0
   m_Name: Crystal S
   m_TagString: Untagged
@@ -177,19 +162,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7382140179128399360
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3027749112159872619}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3164596999133917549
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,7 +173,6 @@ GameObject:
   - component: {fileID: 2863242115279454230}
   - component: {fileID: 6880505238336490004}
   - component: {fileID: 830707783645224453}
-  - component: {fileID: 5200403641300810484}
   m_Layer: 0
   m_Name: Crystal N
   m_TagString: Untagged
@@ -272,19 +243,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5200403641300810484
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3164596999133917549}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5701815142990198488
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,7 +254,6 @@ GameObject:
   - component: {fileID: 2823010601756372827}
   - component: {fileID: 4243646540583563001}
   - component: {fileID: 3955748777674499710}
-  - component: {fileID: 1203619315884425773}
   m_Layer: 0
   m_Name: TowerExtra
   m_TagString: Untagged
@@ -369,19 +326,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1203619315884425773
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5701815142990198488}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &9046480654948530198
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,7 +337,6 @@ GameObject:
   - component: {fileID: 290254264298118595}
   - component: {fileID: 1140435989801929561}
   - component: {fileID: 3497063531197555991}
-  - component: {fileID: 5504035252243981808}
   m_Layer: 0
   m_Name: Crystal W
   m_TagString: Untagged
@@ -464,19 +407,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5504035252243981808
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9046480654948530198}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &5664921285754980941
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -484,6 +414,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 774479544280255612, guid: 90a6cfb90fd0ec54b9b1016244c593c7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 774479544280255612, guid: 90a6cfb90fd0ec54b9b1016244c593c7, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1700031003993457205, guid: 90a6cfb90fd0ec54b9b1016244c593c7, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
@@ -559,6 +497,26 @@ PrefabInstance:
     - target: {fileID: 6109345023676734051, guid: 90a6cfb90fd0ec54b9b1016244c593c7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6251986523617253481, guid: 90a6cfb90fd0ec54b9b1016244c593c7, type: 3}
+      propertyPath: m_Shape
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6251986523617253481, guid: 90a6cfb90fd0ec54b9b1016244c593c7, type: 3}
+      propertyPath: m_Center.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6251986523617253481, guid: 90a6cfb90fd0ec54b9b1016244c593c7, type: 3}
+      propertyPath: m_Extents.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6251986523617253481, guid: 90a6cfb90fd0ec54b9b1016244c593c7, type: 3}
+      propertyPath: m_Extents.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6251986523617253481, guid: 90a6cfb90fd0ec54b9b1016244c593c7, type: 3}
+      propertyPath: m_Extents.z
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 7324418338924889766, guid: 90a6cfb90fd0ec54b9b1016244c593c7, type: 3}
       propertyPath: m_Mesh
