@@ -25,4 +25,6 @@ public class UnitySpriteEvent : UnityEvent<Sprite> { }
 #endregion
 
 #region Custom
+[System.Serializable]
+public class UnityTexture2DEvent : UnityEvent<Texture2D> { }
 #endregion
