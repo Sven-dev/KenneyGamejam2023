@@ -29,6 +29,8 @@ public class EnemySpawner : MonoBehaviour
         while (!GameOver)
         {
             OnTimerUpdate?.Invoke("Wave in progress");
+            AudioManager.Instance.Play("MusicAction");
+            AudioManager.Instance.FadeOut("MusicCalm", 1);
 
             int enemiesToSpawn = Wave * 2 + 18;
             while (enemiesToSpawn > 0)
@@ -42,6 +44,9 @@ public class EnemySpawner : MonoBehaviour
             }
 
             Wave++;
+
+            AudioManager.Instance.Play("MusicCalm");
+            AudioManager.Instance.FadeOut("MusicAction", 1);
 
             int cooldown = TimeBetweenWaves;
             while (cooldown > 0)

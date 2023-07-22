@@ -23,7 +23,7 @@ public class GridGenerator : MonoBehaviour
     [Space]
     [SerializeField] private List<List<Tile>> Grid = new List<List<Tile>>();
     [Space]
-    [SerializeField] private List<Tower> Towers;
+    [SerializeField] private List<Transform> Towers;
 
     public bool GridGenerated = false;
 

@@ -171,6 +171,10 @@ PrefabInstance:
       value: 4.46
       objectReference: {fileID: 0}
     - target: {fileID: 7982397985662853109, guid: aec951036ade12340bbd17ca7627630f, type: 3}
+      propertyPath: Towers.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7982397985662853109, guid: aec951036ade12340bbd17ca7627630f, type: 3}
       propertyPath: IceTreePrefabs.Array.data[0]
       value: 
       objectReference: {fileID: 6061763036533609138, guid: 3239f2ece6ec14742862af82ab46eeae, type: 3}
@@ -740,6 +744,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2007146403374886730, guid: 0eefd29398e2c8a4b84208c82a90d73a, type: 3}
+      propertyPath: TimeBetweenWaves
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2007146403374886730, guid: 0eefd29398e2c8a4b84208c82a90d73a, type: 3}
+      propertyPath: TimeBetweenEnemySpawns
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2007146403374886730, guid: 0eefd29398e2c8a4b84208c82a90d73a, type: 3}
       propertyPath: OnTimerUpdate.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -794,6 +806,14 @@ PrefabInstance:
     - target: {fileID: 2007146403469641906, guid: 0eefd29398e2c8a4b84208c82a90d73a, type: 3}
       propertyPath: OnHealthChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2007146403483187816, guid: 0eefd29398e2c8a4b84208c82a90d73a, type: 3}
+      propertyPath: TimeBetweenWaves
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2007146403483187816, guid: 0eefd29398e2c8a4b84208c82a90d73a, type: 3}
+      propertyPath: TimeBetweenEnemySpawns
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2007146403483187816, guid: 0eefd29398e2c8a4b84208c82a90d73a, type: 3}
       propertyPath: OnTimerUpdate.m_PersistentCalls.m_Calls.Array.size
@@ -930,6 +950,14 @@ PrefabInstance:
     - target: {fileID: 2007146404857144963, guid: 0eefd29398e2c8a4b84208c82a90d73a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2007146405172154639, guid: 0eefd29398e2c8a4b84208c82a90d73a, type: 3}
+      propertyPath: TimeBetweenWaves
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2007146405172154639, guid: 0eefd29398e2c8a4b84208c82a90d73a, type: 3}
+      propertyPath: TimeBetweenEnemySpawns
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2007146405172154639, guid: 0eefd29398e2c8a4b84208c82a90d73a, type: 3}
       propertyPath: OnTimerUpdate.m_PersistentCalls.m_Calls.Array.size
