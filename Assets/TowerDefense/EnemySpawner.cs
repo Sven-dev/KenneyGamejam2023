@@ -37,7 +37,7 @@ public class EnemySpawner : MonoBehaviour
                 AudioManager.Instance.FadeOut("MusicCalm", 1);
             }
 
-            int enemiesToSpawn = Wave * 5 + 10;
+            int enemiesToSpawn = Wave * 3 + 5;
             while (enemiesToSpawn > 0)
             {
                 Enemy enemy = Instantiate(EnemyPrefabs[0], EnemySpawnPivot.position, Quaternion.identity, EnemyWrapper);

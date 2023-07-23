@@ -201,7 +201,7 @@ public class GridGenerator : MonoBehaviour
         }
 
         int amountOfTowers = 0;
-        while (amountOfTowers < 15)
+        while (amountOfTowers < 10)
         {
             int rndx = Random.Range(0, GridSize);
             int rndz = Random.Range(0, GridSize);
