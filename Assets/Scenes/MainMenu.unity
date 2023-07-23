@@ -1321,7 +1321,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '[Name pending] is a tower defense game where you have to explore the world
+  m_Text: 'TowerTrip is a tower defense game where you have to explore the world
     in order to find towers. How long can you fight off the waves of enemies?
 
 
@@ -1330,22 +1330,25 @@ MonoBehaviour:
 
     Explore mode:
 
-    - Right mouse click: Move the character around.
+    - Right mouse button: Move the character around.
+
+    -
+    Left mouse button: Pick up a tower
 
 
-    Build
-    mode:
+    Build mode:
 
-    (Click and drag a tower from your inventory)
+    (Click and drag a tower
+    from your inventory)
 
-    - Left mouse click:
-    Place a tower.
+    - Left mouse button: Place a tower.
 
-    - Right mouse click: Cancel build mode.
+    - Right mouse
+    button: Cancel build mode.
 
 
-    (Be sure to
-    rate the game on Itch.io if you enjoyed it)'
+    (Be sure to rate the game on Itch.io if you
+    enjoyed it)'
 --- !u!222 &723726135
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1949,9 +1952,10 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "- Concepting, Game design, UI design & programming: WhySoup, Greenclonk\n-
-    World & Sound design: WhySoup\n\n- Emotional Support: Atlas, Arina, Dynalope\n\nAssets
-    used:\n- Visuals : Kenney (CCo 1.0 Universal)\n- Sound effects: Kenney (CC0 1.0
-    Universal)\n- Music\r: Kevin Macleod (Creative Commons 4.0)"
+    World & Sound design: WhySoup\n- Enemy behaviour and pathing: Greenclonk\n\n-
+    Emotional Support: Atlas, Arina, Dynalope\n\nAssets used:\n- Visuals : Kenney
+    (CCo 1.0 Universal)\n- Sound effects: Kenney (CC0 1.0 Universal)\n- Music\r:
+    Kevin Macleod (Creative Commons 4.0)"
 --- !u!222 &804708894
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3603,7 +3607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4949,11 +4953,11 @@ RectTransform:
   m_Father: {fileID: 1764590498}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.66, y: 334}
-  m_SizeDelta: {x: 671.04, y: 212.01}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 4.66, y: 0.0050354004}
+  m_SizeDelta: {x: 671.04, y: 212.01001}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1821768477
 MonoBehaviour:
   m_ObjectHideFlags: 0
