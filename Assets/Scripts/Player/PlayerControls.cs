@@ -152,7 +152,7 @@ public class PlayerControls : MonoBehaviour
 
                         if (Physics.Raycast(posBuild.position + Vector3.up, Vector3.down, 500.0f, layerGrass))
                         {
-                            ChangeBuildColour(false);
+                            ChangeBuildColour(true);
                         }
                         else
                         {
