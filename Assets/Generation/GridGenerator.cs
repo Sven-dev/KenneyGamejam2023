@@ -57,7 +57,14 @@ public class GridGenerator : MonoBehaviour
 
     public Tile GetGridPosition(int z, int x)
     {
-        return Grid[z][x];
+        try
+        {
+            return Grid[z][x];
+        }
+        catch
+        {
+            return null;
+        }
     }
 
     private void GenerateGridStructure()
@@ -206,6 +213,11 @@ public class GridGenerator : MonoBehaviour
             }
 
             Tile randomtile = GetGridPosition(rndz, rndx);
+
+            if (randomtile == null)
+            {
+                continue;
+            }
 
             if (randomtile.HasTree)
             {

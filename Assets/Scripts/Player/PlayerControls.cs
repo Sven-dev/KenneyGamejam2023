@@ -369,6 +369,8 @@ public class PlayerControls : MonoBehaviour
                     greenBuild.position = new Vector3(50, -10, 50);
 
                     StopBuildMode();
+
+                    AudioManager.Instance.Play("PlayerPlaceTowerCommand");
                 }
             }
         }

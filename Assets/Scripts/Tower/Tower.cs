@@ -10,6 +10,8 @@ public class Tower : MonoBehaviour
     [SerializeField] private float Cooldown;
     [Space]
     [SerializeField] private Transform GunBarrel;
+    [SerializeField] private ParticleSystem ProjectileParticle;
+    [SerializeField] private ParticleSystem AOEParticle;
 
     private List<Enemy> Targets = new List<Enemy>();
 
@@ -58,6 +60,7 @@ public class Tower : MonoBehaviour
                     {
                         Fire(chosenTarget);
                         GunBarrel.LookAt(chosenTarget.transform);
+                        ProjectileParticle.Play();
                         AudioManager.Instance.PlayRandom("ProjectileTowerShoot");
                     }
                 }
@@ -78,6 +81,7 @@ public class Tower : MonoBehaviour
                     }
 
                     AudioManager.Instance.PlayRandom("AOETowerShoot");
+                    AOEParticle.Play();
                 }
 
                 cooldown = Cooldown;
@@ -105,9 +109,7 @@ public class Tower : MonoBehaviour
 
     private void Fire(Enemy target)
     {
-        target.TakeDamage(Damage);
-
-        //Needs some sort of indication
+        target.TakeDamage(Damage);       
     }
 
     public Element GetElement()
