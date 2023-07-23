@@ -327,7 +327,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 3.0750124}
+  m_AnchoredPosition: {x: 0, y: 3.0750122}
   m_SizeDelta: {x: 0, y: -6.1499753}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &215755660
@@ -973,7 +973,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 3.0750124}
+  m_AnchoredPosition: {x: 0, y: 3.0750122}
   m_SizeDelta: {x: 0, y: -6.1499753}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &522157671
@@ -1596,7 +1596,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 3.0750124}
+  m_AnchoredPosition: {x: 0, y: 3.0750122}
   m_SizeDelta: {x: 0, y: -6.1499753}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &767487422
@@ -1833,7 +1833,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 3.0750124}
+  m_AnchoredPosition: {x: 0, y: 3.0750122}
   m_SizeDelta: {x: 0, y: -6.1499753}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &782794993
@@ -2435,7 +2435,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 2.93}
+  m_AnchoredPosition: {x: 0, y: 2.9300003}
   m_SizeDelta: {x: 0, y: -5.87}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &958791464
@@ -3587,7 +3587,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 3.08}
+  m_AnchoredPosition: {x: 0, y: 3.0800018}
   m_SizeDelta: {x: 0, y: -6.16}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1434637398
@@ -4571,7 +4571,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 3.0750124}
+  m_AnchoredPosition: {x: 0, y: 3.0750122}
   m_SizeDelta: {x: 0, y: -6.1499753}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1537926745
@@ -4951,8 +4951,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.66, y: 323.64}
-  m_SizeDelta: {x: 671.04, y: 232.72}
+  m_AnchoredPosition: {x: 4.66, y: 334}
+  m_SizeDelta: {x: 671.04, y: 212.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1821768477
 MonoBehaviour:
@@ -4976,18 +4976,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 528f0b118481b3c4e9dc8e0d4f55b54d, type: 3}
-    m_FontSize: 39
+    m_FontSize: 69
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 52
+    m_MinSize: 0
+    m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Fuck we don't have a title for this yet
+  m_Text: Tower Trip
 --- !u!222 &1821768478
 CanvasRenderer:
   m_ObjectHideFlags: 0
