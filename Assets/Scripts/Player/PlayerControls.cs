@@ -11,9 +11,15 @@ public class PlayerControls : MonoBehaviour
     [SerializeField]    Transform CamPoint = null;
     [SerializeField]    Transform CamPosition = null;
 
-    [SerializeField]    Transform greenBuild = null;
+    [SerializeField]    Transform  posBuild = null;
+
+    [SerializeField]    GameObject greenBuild = null;
+    [SerializeField]    GameObject redBuild = null;
+
     [SerializeField]    GameObject greenCrys = null;
     [SerializeField]    GameObject greenProj = null;
+    [SerializeField]    GameObject redCrys = null;
+    [SerializeField]    GameObject redProj = null;
 
     [SerializeField]    LayerMask layerGround = 0;
     [SerializeField]    LayerMask layerTower = 0;
@@ -142,7 +148,20 @@ public class PlayerControls : MonoBehaviour
                         pinPoint.x = Mathf.RoundToInt(hit.point.x);
                         pinPoint.y = 0.2f;
                         pinPoint.z = Mathf.RoundToInt(hit.point.z);
-                        greenBuild.position = pinPoint;
+                        posBuild.position = pinPoint;
+
+                        if (Physics.Raycast(posBuild.position + Vector3.up, Vector3.down, 500.0f, layerGrass))
+                        {
+                            ChangeBuildColour(true);
+                        }
+                        else
+                        {
+                            ChangeBuildColour(false);
+                        }
+                    }
+                    else
+                    {
+                        ChangeBuildColour(false);
                     }
                 }
                 break;
@@ -165,6 +184,12 @@ public class PlayerControls : MonoBehaviour
         //CameraTurns();
 
         CameraFollow();
+    }
+
+    private void ChangeBuildColour(bool _green)
+    {
+        if (greenBuild != null) greenBuild.gameObject.SetActive(_green);
+        if (redBuild != null) redBuild.gameObject.SetActive(!_green);
     }
 
     #endregion
@@ -357,21 +382,21 @@ public class PlayerControls : MonoBehaviour
             //Ray is the class that contains what we need for the laser
             Ray ray = Camera.main.ScreenPointToRay(mousePoint);
 
-            if (Physics.Raycast(greenBuild.position + Vector3.up, Vector3.down, 500.0f, layerGrass))
+            if (Physics.Raycast(posBuild.position + Vector3.up, Vector3.down, 500.0f, layerGrass))
             {
-                if (Physics.Raycast(greenBuild.position, Vector3.up, 500.0f, layerTower))
+                if (Physics.Raycast(posBuild.position, Vector3.up, 500.0f, layerTower))
                 {
                     //nothing!
                 }
                 else if (BuildingFromInventory >= 0)
                 {
-                    Vector3 buildPOS = greenBuild.position;
+                    Vector3 buildPOS = posBuild.position;
                     GameObject BuildingTower = PlayerManager.Instance.RemoveFromInventory(BuildingFromInventory);
                     //TODO: Instantiate new Tower at this position (also check if this doesn't block anything)
                     GameObject tow = Instantiate(BuildingTower, nestTowers);
                     tow.transform.position = buildPOS;
 
-                    greenBuild.position = new Vector3(50, -10, 50);
+                    posBuild.position = new Vector3(50, -10, 50);
 
                     StopBuildMode();
 
@@ -456,8 +481,10 @@ public class PlayerControls : MonoBehaviour
         SetActionType(true, CommandType.BuildMode);
         SetActionType(false, CommandType.StopBuildMode);
 
-        greenCrys.SetActive(towID >= 3);
-        greenProj.SetActive(towID < 3);
+        if(greenCrys != null) greenCrys.SetActive(towID >= 3);
+        if(redCrys != null) redCrys.SetActive(towID >= 3);
+        if(greenProj != null) greenProj.SetActive(towID < 3);
+        if(redProj != null) redProj.SetActive(towID < 3);
         BuildingFromInventory = num;
 
         if (PlayerManager.Instance != null)
@@ -471,7 +498,7 @@ public class PlayerControls : MonoBehaviour
         SetActionType(false, CommandType.CommandUnit);
 
 
-        greenBuild.position = new Vector3(50, -10, 50);
+        posBuild.position = new Vector3(50, -10, 50);
         if (CanvasManager.Instance != null)
         {
             CanvasManager.Instance.UndoCall();
