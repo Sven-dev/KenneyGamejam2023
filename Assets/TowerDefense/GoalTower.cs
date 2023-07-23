@@ -22,6 +22,9 @@ public class GoalTower : MonoBehaviour
             {
                 CanvasManager.Instance.GameOver(hasDied);
             }
+            AudioManager.Instance.Play("GoalTowerExplode");
         }
+        AudioManager.Instance.RandomizePitch("GoalTowerHit", 0.9f, 1.1f);
+        AudioManager.Instance.Play("GoalTowerHit");
     }
 }

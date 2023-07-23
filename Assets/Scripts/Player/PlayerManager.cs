@@ -88,6 +88,7 @@ public class PlayerManager : MonoBehaviour
         if (controlledUnit)
         {
             controlledUnit.GetTo(_at, _destination);
+            AudioManager.Instance.Play("PlayerWalkCommand");
         }
     }
 

@@ -65,6 +65,7 @@ public class Unit : MonoBehaviour
                         {
                             //success inserted to Inventory
                             tp.RemovePickUP();
+                            AudioManager.Instance.Play("TowerPickUp");
                         }
                     }
                 }
