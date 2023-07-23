@@ -80,5 +80,7 @@ MonoBehaviour:
   layerGrass:
     serializedVersion: 2
     m_Bits: 512
+  matGreen: {fileID: 2100000, guid: 25f92d2b2c33dc742b20f0a15632d736, type: 2}
+  matRed: {fileID: 2100000, guid: fd4d184819fd36246921bd9e4e5d8d7d, type: 2}
   typeOne: 6
   typeTwo: 5
