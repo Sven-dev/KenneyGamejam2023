@@ -187,7 +187,6 @@ public class GridGenerator : MonoBehaviour
                     }
                 }
 
-
                 int rnd = Random.Range(0, 4);
                 Vector3 rotationVector = Vector3.up * 90 * rnd;
                 Quaternion rotation = Quaternion.Euler(rotationVector);
@@ -201,7 +200,20 @@ public class GridGenerator : MonoBehaviour
         }
 
         int amountOfTowers = 0;
-        while (amountOfTowers < 10)
+        while (amountOfTowers < 4)
+        {
+            PlaceStructure();
+            amountOfTowers++;
+        }
+
+        GridGenerated = true;
+    }
+
+
+    public void PlaceStructure()
+    {
+        bool StructurePlaced = false;
+        while (!StructurePlaced)
         {
             int rndx = Random.Range(0, GridSize);
             int rndz = Random.Range(0, GridSize);
@@ -213,7 +225,6 @@ public class GridGenerator : MonoBehaviour
             }
 
             Tile randomtile = GetGridPosition(rndz, rndx);
-
             if (randomtile == null)
             {
                 continue;
@@ -247,30 +258,7 @@ public class GridGenerator : MonoBehaviour
             }
 
             Instantiate(tower, randomtile.transform.position + Vector3.up * 0.5f, Quaternion.identity);
-            amountOfTowers++;
-        }
-
-        GridGenerated = true;
-    }
-
-    /*
-    public void PlaceStructure(int x, int y, float value)
-    {
-        Transform tile = Grid[y][x];
-        if (tile.childCount != 0)
-        {
-            Destroy(tile.GetChild(0).gameObject);
-        }
-
-        if (value < 0.5f)
-        {
-            Instantiate(TilePrefabs[0], tile);
-            
-        }
-        else
-        {
-            Instantiate(TilePrefabs[1], tile);
+            StructurePlaced = true;
         }
     }
-    */
 }

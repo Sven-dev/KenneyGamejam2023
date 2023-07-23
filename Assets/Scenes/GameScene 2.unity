@@ -491,6 +491,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aec951036ade12340bbd17ca7627630f, type: 3}
+--- !u!114 &62680670 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7982397985662853109, guid: aec951036ade12340bbd17ca7627630f, type: 3}
+  m_PrefabInstance: {fileID: 62680669}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3de1af11f85a5774cb8f0171cbca9839, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &140348967
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1087,7 +1098,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 50, y: -129.89, z: 0}
 --- !u!1001 &427629543
 PrefabInstance:
@@ -2369,6 +2380,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2007146403374886730, guid: 0eefd29398e2c8a4b84208c82a90d73a, type: 3}
+      propertyPath: GridGenerator
+      value: 
+      objectReference: {fileID: 62680670}
+    - target: {fileID: 2007146403374886730, guid: 0eefd29398e2c8a4b84208c82a90d73a, type: 3}
       propertyPath: TimeBetweenWaves
       value: 60
       objectReference: {fileID: 0}
@@ -2384,6 +2399,10 @@ PrefabInstance:
       propertyPath: OnHealthChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: UpdateHealthValue
       objectReference: {fileID: 0}
+    - target: {fileID: 2007146403483187816, guid: 0eefd29398e2c8a4b84208c82a90d73a, type: 3}
+      propertyPath: GridGenerator
+      value: 
+      objectReference: {fileID: 62680670}
     - target: {fileID: 2007146403483187816, guid: 0eefd29398e2c8a4b84208c82a90d73a, type: 3}
       propertyPath: TimeBetweenWaves
       value: 60
@@ -2460,6 +2479,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2007146405172154639, guid: 0eefd29398e2c8a4b84208c82a90d73a, type: 3}
+      propertyPath: GridGenerator
+      value: 
+      objectReference: {fileID: 62680670}
     - target: {fileID: 2007146405172154639, guid: 0eefd29398e2c8a4b84208c82a90d73a, type: 3}
       propertyPath: TimeBetweenWaves
       value: 60
@@ -3331,7 +3354,7 @@ Transform:
   - {fileID: 726271412}
   - {fileID: 505259479}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1471986069
 PrefabInstance:
