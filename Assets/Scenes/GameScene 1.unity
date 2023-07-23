@@ -382,6 +382,10 @@ PrefabInstance:
       value: 0.475
       objectReference: {fileID: 0}
     - target: {fileID: 7982397985662853109, guid: aec951036ade12340bbd17ca7627630f, type: 3}
+      propertyPath: TowerDefenseSize
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7982397985662853109, guid: aec951036ade12340bbd17ca7627630f, type: 3}
       propertyPath: Towers.Array.size
       value: 6
       objectReference: {fileID: 0}
