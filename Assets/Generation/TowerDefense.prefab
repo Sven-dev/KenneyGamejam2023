@@ -7135,8 +7135,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameOver: 0
-  TimeBetweenWaves: 180
-  TimeBetweenEnemySpawns: 1
+  TimeBetweenWaves: 60
+  TimeBetweenEnemySpawns: 1.5
   EnemyPrefabs:
   - {fileID: 6276440760189933448, guid: ca49839a5fd77344a946c829d25aa297, type: 3}
   EnemySpawnPivot: {fileID: 2219595989578944752}
@@ -7416,7 +7416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameOver: 0
-  TimeBetweenWaves: 180
+  TimeBetweenWaves: 60
   TimeBetweenEnemySpawns: 2
   EnemyPrefabs:
   - {fileID: 6276440760189933448, guid: ca49839a5fd77344a946c829d25aa297, type: 3}
@@ -7926,7 +7926,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameOver: 0
-  TimeBetweenWaves: 180
+  TimeBetweenWaves: 60
   TimeBetweenEnemySpawns: 1
   EnemyPrefabs:
   - {fileID: 6276440760189933448, guid: ca49839a5fd77344a946c829d25aa297, type: 3}
