@@ -357,9 +357,9 @@ public class PlayerControls : MonoBehaviour
             //Ray is the class that contains what we need for the laser
             Ray ray = Camera.main.ScreenPointToRay(mousePoint);
 
-            if (Physics.Raycast(ray, out hit, 500.0f, layerGrass))
+            if (Physics.Raycast(greenBuild.position + Vector3.up, Vector3.down, 500.0f, layerGrass))
             {
-                if (Physics.Raycast(ray, out towcheck, 500.0f, layerTower))
+                if (Physics.Raycast(greenBuild.position, Vector3.up, 500.0f, layerTower))
                 {
                     //nothing!
                 }

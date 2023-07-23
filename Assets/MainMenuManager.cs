@@ -10,7 +10,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void StartGame()
     {
-        LevelManager.Instance.LoadLevel(2, Transition.Crossfade);
+        LevelManager.Instance.LoadLevel(Random.Range(2, 5), Transition.Crossfade);
         //AudioManager.Instance.FadeOut("Music Menu", 2f);
         //AudioManager.Instance.FadeIn("Music Game", 1f);
     }
