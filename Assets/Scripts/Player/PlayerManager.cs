@@ -95,14 +95,22 @@ public class PlayerManager : MonoBehaviour
     }
 
 
-    public void BuildModeActivate(int towID)
+    public void BuildModeActivate(int towID, int _num)
     {
-        playerControls.GoBuildMode(towID);
+        playerControls.GoBuildMode(towID, _num);
     }
 
     public GameObject RemoveFromInventory(int num)
     {
-        return inventory.RemoveFromInventory(num);
+        GameObject tower = inventory.SelectTower(num);
+        inventory.RemoveFromInventory(num);
+
+        if (CanvasManager.Instance != null)
+        {
+            CanvasManager.Instance.UpdateButtons(inventory.GetList());
+        }
+
+        return tower;
     }
     public GameObject SelectFromInventory(int num)
     {

@@ -65,7 +65,7 @@ public class CanvasManager : MonoBehaviour
                             break;
                     }
 
-                    PlayerManager.Instance.BuildModeActivate(typeID);
+                    PlayerManager.Instance.BuildModeActivate(typeID, num);
                 }
             }
         }

@@ -58,7 +58,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cam: {fileID: 0}
+  nestTowers: {fileID: 0}
   CamPoint: {fileID: 0}
   CamPosition: {fileID: 0}
+  greenBuild: {fileID: 0}
+  greenCrys: {fileID: 0}
+  greenProj: {fileID: 0}
+  layerGround:
+    serializedVersion: 2
+    m_Bits: 128
+  layerTower:
+    serializedVersion: 2
+    m_Bits: 256
+  layerGrass:
+    serializedVersion: 2
+    m_Bits: 512
   typeOne: 0
   typeTwo: 5

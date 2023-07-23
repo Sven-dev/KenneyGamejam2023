@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 15006553}
   - component: {fileID: 15006552}
   - component: {fileID: 15006551}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1880,17 +1880,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7105339693100739503, guid: 5bd407b6af7fdea4099212662090cd1c, type: 3}
   m_PrefabInstance: {fileID: 731246972}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &751051951 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 751051951, guid: 793e60f63efbe5d41b3f3c3503ab7d96, type: 3}
-  m_PrefabInstance: {fileID: 1796055959}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &776321658
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2349,14 +2338,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2007146403374886730, guid: 0eefd29398e2c8a4b84208c82a90d73a, type: 3}
-      propertyPath: OnTimerUpdate.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 751051951}
-    - target: {fileID: 2007146403483187816, guid: 0eefd29398e2c8a4b84208c82a90d73a, type: 3}
-      propertyPath: OnTimerUpdate.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 751051951}
+    - target: {fileID: 2007146403483187822, guid: 0eefd29398e2c8a4b84208c82a90d73a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2007146404857144960, guid: 0eefd29398e2c8a4b84208c82a90d73a, type: 3}
       propertyPath: m_Name
       value: TowerDefense
@@ -2405,10 +2390,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2007146405172154639, guid: 0eefd29398e2c8a4b84208c82a90d73a, type: 3}
-      propertyPath: OnTimerUpdate.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 751051951}
+    - target: {fileID: 2007146405172154637, guid: 0eefd29398e2c8a4b84208c82a90d73a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0eefd29398e2c8a4b84208c82a90d73a, type: 3}
 --- !u!1001 &1004895388
@@ -3615,7 +3600,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1441151393823505048, guid: caf72ceb60a9e1f4d8408380bb3e1407, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 45
+      value: 44
       objectReference: {fileID: 0}
     - target: {fileID: 1441151393823505048, guid: caf72ceb60a9e1f4d8408380bb3e1407, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3623,7 +3608,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1441151393823505048, guid: caf72ceb60a9e1f4d8408380bb3e1407, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 43
+      value: 44
       objectReference: {fileID: 0}
     - target: {fileID: 1441151393823505048, guid: caf72ceb60a9e1f4d8408380bb3e1407, type: 3}
       propertyPath: m_LocalRotation.w
