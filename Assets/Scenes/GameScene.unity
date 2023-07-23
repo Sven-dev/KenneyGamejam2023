@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -767,6 +767,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7105339693100739503, guid: 5bd407b6af7fdea4099212662090cd1c, type: 3}
   m_PrefabInstance: {fileID: 261981969}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &315059581 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1796055962, guid: 793e60f63efbe5d41b3f3c3503ab7d96, type: 3}
+  m_PrefabInstance: {fileID: 1796055959}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff1567946e03e7148b071485bbf69495, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &318490761
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2353,10 +2364,34 @@ PrefabInstance:
       propertyPath: OnTimerUpdate.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 751051951}
+    - target: {fileID: 2007146403469641906, guid: 0eefd29398e2c8a4b84208c82a90d73a, type: 3}
+      propertyPath: OnHealthChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 315059581}
+    - target: {fileID: 2007146403469641906, guid: 0eefd29398e2c8a4b84208c82a90d73a, type: 3}
+      propertyPath: OnHealthChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdateHealthValue
+      objectReference: {fileID: 0}
     - target: {fileID: 2007146403483187816, guid: 0eefd29398e2c8a4b84208c82a90d73a, type: 3}
       propertyPath: OnTimerUpdate.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 751051951}
+    - target: {fileID: 2007146403579576784, guid: 0eefd29398e2c8a4b84208c82a90d73a, type: 3}
+      propertyPath: OnHealthChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 315059581}
+    - target: {fileID: 2007146403579576784, guid: 0eefd29398e2c8a4b84208c82a90d73a, type: 3}
+      propertyPath: OnHealthChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdateHealthValue
+      objectReference: {fileID: 0}
+    - target: {fileID: 2007146404601908228, guid: 0eefd29398e2c8a4b84208c82a90d73a, type: 3}
+      propertyPath: OnHealthChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 315059581}
+    - target: {fileID: 2007146404601908228, guid: 0eefd29398e2c8a4b84208c82a90d73a, type: 3}
+      propertyPath: OnHealthChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdateHealthValue
+      objectReference: {fileID: 0}
     - target: {fileID: 2007146404857144960, guid: 0eefd29398e2c8a4b84208c82a90d73a, type: 3}
       propertyPath: m_Name
       value: TowerDefense
@@ -3615,7 +3650,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1441151393823505048, guid: caf72ceb60a9e1f4d8408380bb3e1407, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 45
+      value: 47
       objectReference: {fileID: 0}
     - target: {fileID: 1441151393823505048, guid: caf72ceb60a9e1f4d8408380bb3e1407, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3623,7 +3658,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1441151393823505048, guid: caf72ceb60a9e1f4d8408380bb3e1407, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 43
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 1441151393823505048, guid: caf72ceb60a9e1f4d8408380bb3e1407, type: 3}
       propertyPath: m_LocalRotation.w
