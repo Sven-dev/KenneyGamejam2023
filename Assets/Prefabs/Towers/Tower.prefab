@@ -196,6 +196,8 @@ MonoBehaviour:
   Damage: 5
   Cooldown: 5
   GunBarrel: {fileID: 0}
+  ProjectileParticle: {fileID: 0}
+  AOEParticle: {fileID: 0}
 --- !u!1 &4244442501582351704
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,6 +312,7 @@ Transform:
   - {fileID: 774479544280255612}
   - {fileID: 7652684502804763460}
   - {fileID: 531228771392468967}
+  - {fileID: 3333604004628788588}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -329,3 +332,89 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0.5, z: 0}
   m_TimeToStationary: 0.5
+--- !u!1001 &3934529307041141931
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6109345023676734051}
+    m_Modifications:
+    - target: {fileID: 1788121457184454281, guid: 795247bbf569d2241a5773aa7abea1f6, type: 3}
+      propertyPath: m_Name
+      value: Smoke
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790487208092426695, guid: 795247bbf569d2241a5773aa7abea1f6, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790487208092426695, guid: 795247bbf569d2241a5773aa7abea1f6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.423
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790487208092426695, guid: 795247bbf569d2241a5773aa7abea1f6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.091
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790487208092426695, guid: 795247bbf569d2241a5773aa7abea1f6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.516
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790487208092426695, guid: 795247bbf569d2241a5773aa7abea1f6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790487208092426695, guid: 795247bbf569d2241a5773aa7abea1f6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790487208092426695, guid: 795247bbf569d2241a5773aa7abea1f6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790487208092426695, guid: 795247bbf569d2241a5773aa7abea1f6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790487208092426695, guid: 795247bbf569d2241a5773aa7abea1f6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790487208092426695, guid: 795247bbf569d2241a5773aa7abea1f6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790487208092426695, guid: 795247bbf569d2241a5773aa7abea1f6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879825729028692859, guid: 795247bbf569d2241a5773aa7abea1f6, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879825729028692859, guid: 795247bbf569d2241a5773aa7abea1f6, type: 3}
+      propertyPath: prewarm
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879825729028692859, guid: 795247bbf569d2241a5773aa7abea1f6, type: 3}
+      propertyPath: lengthInSec
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879825729028692859, guid: 795247bbf569d2241a5773aa7abea1f6, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879825729028692859, guid: 795247bbf569d2241a5773aa7abea1f6, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879825729028692859, guid: 795247bbf569d2241a5773aa7abea1f6, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 300
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 795247bbf569d2241a5773aa7abea1f6, type: 3}
+--- !u!4 &3333604004628788588 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1790487208092426695, guid: 795247bbf569d2241a5773aa7abea1f6, type: 3}
+  m_PrefabInstance: {fileID: 3934529307041141931}
+  m_PrefabAsset: {fileID: 0}

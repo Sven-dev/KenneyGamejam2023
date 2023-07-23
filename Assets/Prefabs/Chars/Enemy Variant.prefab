@@ -297,8 +297,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Rank: 0
-  HealthPoints: 5
-  Damage: 1
+  HealthPoints: 10
+  Damage: 5
 --- !u!1001 &8495366197819163439
 PrefabInstance:
   m_ObjectHideFlags: 0
