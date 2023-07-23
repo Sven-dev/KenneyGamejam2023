@@ -58,6 +58,7 @@ public class Tower : MonoBehaviour
                     {
                         Fire(chosenTarget);
                         GunBarrel.LookAt(chosenTarget.transform);
+                        AudioManager.Instance.PlayRandom("ProjectileTowerShoot");
                     }
                 }
                 //AOE attack: fire at every enemy in range
@@ -75,6 +76,8 @@ public class Tower : MonoBehaviour
                             Fire(target);
                         }
                     }
+
+                    AudioManager.Instance.PlayRandom("AOETowerShoot");
                 }
 
                 cooldown = Cooldown;

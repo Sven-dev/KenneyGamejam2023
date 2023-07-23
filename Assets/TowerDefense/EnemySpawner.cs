@@ -55,7 +55,6 @@ public class EnemySpawner : MonoBehaviour
             }
 
             Wave++;
-
             if (AudioManager.Instance != null)
             {
                 AudioManager.Instance.Play("MusicCalm");

@@ -81,7 +81,7 @@ public class GridGenerator : MonoBehaviour
                 {
                     continue;
                 }
-                else if (grassWeight > 0.97f)
+                else if (grassWeight > 0.95f)
                 {
                     prefab = TerrainPrefabs[0];
                 }
@@ -199,37 +199,43 @@ public class GridGenerator : MonoBehaviour
             int rndx = Random.Range(0, GridSize);
             int rndz = Random.Range(0, GridSize);
 
+            if (rndz >= GridSize / 2 - TowerDefenseSize / 2 && rndz <= GridSize / 2 + TowerDefenseSize / 2 &&
+                    rndx >= GridSize / 2 - TowerDefenseSize / 2 && rndx <= GridSize / 2 + TowerDefenseSize / 2)
+            {
+                continue;
+            }
+
             Tile randomtile = GetGridPosition(rndz, rndx);
 
-            if (!randomtile.HasTree)
+            if (randomtile.HasTree)
             {
-                Transform tower;
-                switch (randomtile.TerrainType)
-                {
-                    case Element.Normal:
-                        int rnd1 = Random.Range(0, 2);
-                        tower = Towers[rnd1];
-                        break;
+                continue;
+            }
 
-                    case Element.Fire:
-                        int rnd2 = Random.Range(2, 4);
-                        tower = Towers[rnd2];
-                        break;
+            Transform tower;
+            switch (randomtile.TerrainType)
+            {
+                case Element.Normal:
+                    int rnd1 = Random.Range(0, 2);
+                    tower = Towers[rnd1];
+                    break;
 
-                    case Element.Ice:
-                        int rnd3 = Random.Range(4, 6);
-                        tower = Towers[rnd3];
-                        break;
+                case Element.Fire:
+                    int rnd2 = Random.Range(2, 4);
+                    tower = Towers[rnd2];
+                    break;
 
-                    default:
-                        throw new System.Exception("What the fuck is this element?");
-                }
+                case Element.Ice:
+                    int rnd3 = Random.Range(4, 6);
+                    tower = Towers[rnd3];
+                    break;
 
-                Instantiate(tower, randomtile.transform.position + Vector3.up * 0.5f, Quaternion.identity);
+                default:
+                    throw new System.Exception("What the fuck is this element?");
+            }
 
-                amountOfTowers++;
-            } 
-
+            Instantiate(tower, randomtile.transform.position + Vector3.up * 0.5f, Quaternion.identity);
+            amountOfTowers++;
         }
 
         GridGenerated = true;

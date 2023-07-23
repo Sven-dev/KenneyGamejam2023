@@ -113,6 +113,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 7ea2feaec1c727d41b9c1e28c95d233d, type: 2}
     - target: {fileID: 4673087898514540502, guid: 90a6cfb90fd0ec54b9b1016244c593c7, type: 3}
+      propertyPath: Cooldown
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4673087898514540502, guid: 90a6cfb90fd0ec54b9b1016244c593c7, type: 3}
       propertyPath: GunBarrel
       value: 
       objectReference: {fileID: 5926989955515787860}

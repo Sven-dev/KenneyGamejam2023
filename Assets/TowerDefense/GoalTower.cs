@@ -11,5 +11,14 @@ public class GoalTower : MonoBehaviour
     {
         HealthPoints -= value;
         OnHealthChanged?.Invoke(HealthPoints);
+
+        if (HealthPoints == 0)
+        {
+            print("Game over");
+            AudioManager.Instance.Play("GoalTowerExplode");
+        }
+
+        AudioManager.Instance.RandomizePitch("GoalTowerHit", 0.9f, 1.1f);
+        AudioManager.Instance.Play("GoalTowerHit");
     }
 }
