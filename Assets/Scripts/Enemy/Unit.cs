@@ -24,10 +24,18 @@ public class Unit : MonoBehaviour
 
     public void UpdateAnimation(bool _build)
     {
-        if (anim != null)
+        if (agent != null)
         {
-            anim.SetFloat("Speed", agent.velocity.magnitude);
-            anim.SetBool("Holding", _build);
+            if (agent.velocity.magnitude > 0.0f && AudioManager.Instance != null)
+            {
+                //AudioManager.Instance.
+            }
+
+            if (anim != null)
+            {
+                anim.SetFloat("Speed", agent.velocity.magnitude);
+                anim.SetBool("Holding", _build);
+            }
         }
     }
 
