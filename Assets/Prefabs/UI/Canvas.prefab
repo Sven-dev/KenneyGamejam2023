@@ -1366,6 +1366,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 7941441936266889636}
+    - target: {fileID: 4412501358405176491, guid: 74ef0c5c2c4b5ff46916f97a923e912c, type: 3}
+      propertyPath: m_ChildAlignment
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412501358405176491, guid: 74ef0c5c2c4b5ff46916f97a923e912c, type: 3}
+      propertyPath: m_Padding.m_Left
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4412501358405176501, guid: 74ef0c5c2c4b5ff46916f97a923e912c, type: 3}
       propertyPath: m_Type
       value: 0
