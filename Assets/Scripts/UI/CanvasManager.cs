@@ -39,6 +39,7 @@ public class CanvasManager : MonoBehaviour
 
     public void CallTower(int num)
     {
+
         if (PlayerManager.Instance != null)
         {
             GameObject TowerOBJ = PlayerManager.Instance.SelectFromInventory(num);
@@ -64,8 +65,7 @@ public class CanvasManager : MonoBehaviour
                             break;
                     }
 
-                    PlayerManager.Instance.BuildModeActivate(typeID);
-                    AudioManager.Instance.Play("PlayerDragTowerCommand");
+                    PlayerManager.Instance.BuildModeActivate(typeID, num);
                 }
             }
         }

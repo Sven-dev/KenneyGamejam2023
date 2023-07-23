@@ -6,6 +6,8 @@ public class PlayerControls : MonoBehaviour
     [SerializeField]
     Camera Cam = null;
 
+    [SerializeField]    Transform nestTowers = null;
+
     [SerializeField]    Transform CamPoint = null;
     [SerializeField]    Transform CamPosition = null;
 
@@ -13,7 +15,12 @@ public class PlayerControls : MonoBehaviour
     [SerializeField]    GameObject greenCrys = null;
     [SerializeField]    GameObject greenProj = null;
 
+    [SerializeField]    LayerMask layerGround = 0;
+    [SerializeField]    LayerMask layerTower = 0;
+    [SerializeField]    LayerMask layerGrass = 0;
+
     private GameplayControls inputControls = null;
+    int BuildingFromInventory = -1;
 
     bool isSprinting = true;
 
@@ -129,9 +136,13 @@ public class PlayerControls : MonoBehaviour
                     //Ray is the class that contains what we need for the laser
                     Ray ray = Camera.main.ScreenPointToRay(mousePoint);
 
-                    if (Physics.Raycast(ray, out hit, 500.0f))
+                    if (Physics.Raycast(ray, out hit, 500.0f, layerGround))
                     {
-                        greenBuild.position = hit.point;
+                        Vector3 pinPoint = new Vector3();
+                        pinPoint.x = Mathf.RoundToInt(hit.point.x);
+                        pinPoint.y = 0;
+                        pinPoint.z = Mathf.RoundToInt(hit.point.z);
+                        greenBuild.position = pinPoint;
                     }
                 }
                 break;
@@ -345,12 +356,20 @@ public class PlayerControls : MonoBehaviour
             //Ray is the class that contains what we need for the laser
             Ray ray = Camera.main.ScreenPointToRay(mousePoint);
 
-            if (Physics.Raycast(ray, out hit, 500.0f))
+            if (Physics.Raycast(ray, out hit, 500.0f, layerGrass))
             {
-                Vector3 position = greenBuild.position;
-                //TODO: Instantiate new Tower at this position (also check if this doesn't block anything)
+                if (BuildingFromInventory >= 0)
+                {
+                    Vector3 buildPOS = greenBuild.position;
+                    GameObject BuildingTower = PlayerManager.Instance.RemoveFromInventory(BuildingFromInventory);
+                    //TODO: Instantiate new Tower at this position (also check if this doesn't block anything)
+                    GameObject tow = Instantiate(BuildingTower, nestTowers);
+                    tow.transform.position = buildPOS;
 
-                greenBuild.position = new Vector3(50, -10, 50);
+                    greenBuild.position = new Vector3(50, -10, 50);
+
+                    StopBuildMode();
+                }
             }
         }
     }
@@ -366,7 +385,7 @@ public class PlayerControls : MonoBehaviour
             //Ray is the class that contains what we need for the laser
             Ray ray = Camera.main.ScreenPointToRay(mousePoint);
 
-            if (Physics.Raycast(ray, out hit, 500.0f))
+            if (Physics.Raycast(ray, out hit, 500.0f, layerTower))
             {
                 IInteractable interactable = hit.collider.GetComponent<IInteractable>();
                 if (interactable != null)
@@ -389,7 +408,7 @@ public class PlayerControls : MonoBehaviour
             //Ray is the class that contains what we need for the laser
             Ray ray = Camera.main.ScreenPointToRay(mousePoint);
 
-            if (Physics.Raycast(ray, out hit, 100.0f))
+            if (Physics.Raycast(ray, out hit, 100.0f, layerGround))
             {
                 IInteractable interactable = hit.collider.GetComponent<IInteractable>();
                 if (interactable != null)
@@ -420,13 +439,15 @@ public class PlayerControls : MonoBehaviour
 
     }
 
-    public void GoBuildMode(int towID)
+    public void GoBuildMode(int towID, int num)
     {
         SetActionType(true, CommandType.BuildMode);
         SetActionType(false, CommandType.StopBuildMode);
 
         greenCrys.SetActive(towID >= 3);
         greenProj.SetActive(towID < 3);
+
+        BuildingFromInventory = num;
     }
     public void StopBuildMode()
     {

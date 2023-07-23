@@ -17,6 +17,10 @@ public class Inventory
         return false;
     }
 
+    public int GetCount()
+    {
+        return listTowers.Count;
+    }
     public List<GameObject> GetList()
     {
         return listTowers;
@@ -33,7 +37,7 @@ public class Inventory
     public GameObject RemoveFromInventory(int _num)
     {
         GameObject removed = null;
-        if (listTowers.Count < _num)
+        if (listTowers.Count > _num)
         {
             removed = listTowers[_num];
             listTowers.RemoveAt(_num);
