@@ -68,12 +68,6 @@ public class PlayerManager : MonoBehaviour
         if (_Instance == this) _Instance = null;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-
-    }
 
     public void CommandUnit(Vector3 _at, GameObject _destination = null)
     {
@@ -100,11 +94,32 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
+
+    public void BuildModeActivate(int towID)
+    {
+        playerControls.GoBuildMode(towID);
+    }
+
+    public GameObject RemoveFromInventory(int num)
+    {
+        return inventory.RemoveFromInventory(num);
+    }
+    public GameObject SelectFromInventory(int num)
+    {
+        return inventory.SelectTower(num);
+    }
+
     public bool InputToInventory(Unit _unit, GameObject _tower)
     {
         if (_unit == controlledUnit && inventory != null)
         {
-            return inventory.AddToInventory(_tower);
+            bool success = inventory.AddToInventory(_tower);
+            if (CanvasManager.Instance != null)
+            {
+                CanvasManager.Instance.UpdateButtons(inventory.GetList());
+            }
+
+            return success;
         }
 
         return false;

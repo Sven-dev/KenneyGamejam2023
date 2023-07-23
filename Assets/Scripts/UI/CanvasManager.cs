@@ -39,31 +39,62 @@ public class CanvasManager : MonoBehaviour
 
     public void CallTower(int num)
     {
-        UndoButton.SetActive(true);
+
+        if (PlayerManager.Instance != null)
+        {
+            GameObject TowerOBJ = PlayerManager.Instance.SelectFromInventory(num);
+            if (TowerOBJ != null)
+            {
+                Tower tower = TowerOBJ.GetComponentInChildren<Tower>();
+
+                if (tower != null)
+                {
+                    int typeID = 0;
+                    if (tower.GetAttack() == Attack.AreaOfEffect)
+                    { typeID = 3; }
+
+                    switch (tower.GetElement())
+                    {
+                        case Element.Fire:
+                            typeID += 1;
+                            break;
+                        case Element.Ice:
+                            typeID += 2;
+                            break;
+                        default:
+                            break;
+                    }
+
+                    PlayerManager.Instance.BuildModeActivate(typeID);
+                }
+            }
+        }
     }
     public void UndoCall()
     {
-        UndoButton.SetActive(false);
+
+
     }
     public void UpdateButtons(List<GameObject> towerlist)
     {
         int num = 0;
         Tower tow = null;
 
-        foreach (GameObject towerObject in towerlist)
+
+        for (int i = 0; i < 8; i++)
         {
-            towerObject.SetActive(false);
+            TowButtons[i].gameObject.SetActive(false);
         }
 
         foreach (GameObject towerObject in towerlist)
         {
-            tow = towerObject.GetComponent<Tower>();
+            tow = towerObject.GetComponentInChildren<Tower>();
             if (tow != null)
             {
-                towerObject.SetActive(true);
                 UpdateButt(num, tow);
                 num++;
             }
+
         }
     }
 
@@ -71,6 +102,7 @@ public class CanvasManager : MonoBehaviour
     {
         if (num >= 0 && num < 8 && TowButtons != null)
         {
+            TowButtons[num].gameObject.SetActive(true);
             TowButtons[num].SetButtonLayout(tow);
         }
     }

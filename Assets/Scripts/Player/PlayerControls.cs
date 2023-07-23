@@ -1,14 +1,5 @@
 using UnityEngine;
 
-public enum CommandType
-{
-    Nothing,
-    MoveCamera,
-    RotateCamera,
-    BuildMode,
-    StopBuildMode,
-    CommandUnit
-}
 
 public class PlayerControls : MonoBehaviour
 {
@@ -18,13 +9,17 @@ public class PlayerControls : MonoBehaviour
     [SerializeField]    Transform CamPoint = null;
     [SerializeField]    Transform CamPosition = null;
 
+    [SerializeField]    Transform greenBuild = null;
+    [SerializeField]    GameObject greenCrys = null;
+    [SerializeField]    GameObject greenProj = null;
+
     private GameplayControls inputControls = null;
 
     bool isSprinting = true;
 
     float MoveSpeed = 12.0f, SprintSpeed = 2.5f, ZoomSpeed = 0.0f;
 
-    public CommandType typeOne = CommandType.MoveCamera;
+    public CommandType typeOne = CommandType.Select;
     public CommandType typeTwo = CommandType.CommandUnit;
 
     private void Awake()
@@ -97,13 +92,16 @@ public class PlayerControls : MonoBehaviour
             case CommandType.MoveCamera:    break;
             case CommandType.RotateCamera:  break;
             case CommandType.BuildMode:
-                Select();
+                Build();
                 break;
             case CommandType.StopBuildMode:
                 StopBuildMode();
                 break;
             case CommandType.CommandUnit:
                 Command();
+                break;
+            case CommandType.Select:
+                Select();
                 break;
             default:
                 break;
@@ -123,6 +121,19 @@ public class PlayerControls : MonoBehaviour
                 break;
             case CommandType.BuildMode:
                 //TODO: Set Green Tower where mouse is pointing
+                {
+                    Vector2 mousePoint = inputControls.Player.MousePoint.ReadValue<Vector2>();
+
+                    //RaycastHit is the collider that gets touched by the ray/laser
+                    RaycastHit hit;
+                    //Ray is the class that contains what we need for the laser
+                    Ray ray = Camera.main.ScreenPointToRay(mousePoint);
+
+                    if (Physics.Raycast(ray, out hit, 500.0f))
+                    {
+                        greenBuild.position = hit.point;
+                    }
+                }
                 break;
             default:
                 break;
@@ -322,6 +333,27 @@ public class PlayerControls : MonoBehaviour
     }
 
     //Action Related
+    private void Build()
+    {
+        //If using Mouse
+        if (true)
+        {
+            Vector2 mousePoint = inputControls.Player.MousePoint.ReadValue<Vector2>();
+
+            //RaycastHit is the collider that gets touched by the ray/laser
+            RaycastHit hit;
+            //Ray is the class that contains what we need for the laser
+            Ray ray = Camera.main.ScreenPointToRay(mousePoint);
+
+            if (Physics.Raycast(ray, out hit, 500.0f))
+            {
+                Vector3 position = greenBuild.position;
+                //TODO: Instantiate new Tower at this position (also check if this doesn't block anything)
+
+                greenBuild.position = new Vector3(50, -10, 50);
+            }
+        }
+    }
     private void Select()
     {
         //If using Mouse
@@ -364,7 +396,7 @@ public class PlayerControls : MonoBehaviour
                 {
                     if (PlayerManager.Instance)
                     {
-                        PlayerManager.Instance.CommandUnit(hit.collider.transform.position, hit.collider.gameObject);
+                        PlayerManager.Instance.CommandUnit(hit.collider.transform.position);
                     }
                 }
                 else
@@ -388,16 +420,21 @@ public class PlayerControls : MonoBehaviour
 
     }
 
-    public void GoBuildMode()
+    public void GoBuildMode(int towID)
     {
         SetActionType(true, CommandType.BuildMode);
         SetActionType(false, CommandType.StopBuildMode);
+
+        greenCrys.SetActive(towID >= 3);
+        greenProj.SetActive(towID < 3);
     }
     public void StopBuildMode()
     {
         SetActionType(true, CommandType.Nothing);
         SetActionType(false, CommandType.CommandUnit);
 
+
+        greenBuild.position = new Vector3(50, -10, 50);
         if (CanvasManager.Instance != null)
         {
             CanvasManager.Instance.UndoCall();

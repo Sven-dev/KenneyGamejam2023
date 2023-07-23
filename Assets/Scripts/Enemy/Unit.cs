@@ -11,13 +11,12 @@ public class Unit : MonoBehaviour
 
     void Awake()
     {
-
+        agent = GetComponent<NavMeshAgent>();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
         
     }
 
@@ -59,7 +58,7 @@ public class Unit : MonoBehaviour
                 {
                     if (PlayerManager.Instance != null)
                     {
-                        if(PlayerManager.Instance.InputToInventory(this, other.gameObject))
+                        if (PlayerManager.Instance.InputToInventory(this, tp.GetTower()))
                         {
                             //success inserted to Inventory
                             tp.RemovePickUP();
@@ -75,10 +74,8 @@ public class Unit : MonoBehaviour
 
     private void Arrival()
     {
-        Debug.Log("Arrived!");
-        gameObject.SetActive(false);
-
-        unitArrived();
+        //gameObject.SetActive(false);
+        //unitArrived();
     }
 
 }

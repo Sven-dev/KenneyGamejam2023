@@ -117,8 +117,3 @@ public class Tower : MonoBehaviour
     }
 }
 
-public enum Attack
-{
-    Projectile,
-    AreaOfEffect
-}

@@ -23,7 +23,7 @@ public class GridGenerator : MonoBehaviour
     [Space]
     [SerializeField] private List<List<Tile>> Grid = new List<List<Tile>>();
     [Space]
-    [SerializeField] private List<Transform> Towers;
+    [SerializeField] private List<Transform> Towers = new List<Transform>();
 
     public bool GridGenerated = false;
 
@@ -228,7 +228,8 @@ public class GridGenerator : MonoBehaviour
                 Instantiate(tower, randomtile.transform.position + Vector3.up * 0.5f, Quaternion.identity);
 
                 amountOfTowers++;
-            }  
+            } 
+
         }
 
         GridGenerated = true;

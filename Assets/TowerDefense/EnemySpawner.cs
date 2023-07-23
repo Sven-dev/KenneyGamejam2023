@@ -13,6 +13,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private List<Enemy> EnemyPrefabs;
     [SerializeField] private Transform EnemySpawnPivot;
     [SerializeField] private Transform EnemyWrapper;
+    [SerializeField] private Transform HomeTower;
     [Space]
     [SerializeField] private UnityStringEvent OnTimerUpdate;
 
@@ -29,24 +30,37 @@ public class EnemySpawner : MonoBehaviour
         while (!GameOver)
         {
             OnTimerUpdate?.Invoke("Wave in progress");
-            AudioManager.Instance.Play("MusicAction");
-            AudioManager.Instance.FadeOut("MusicCalm", 1);
 
-            int enemiesToSpawn = Wave * 2 + 18;
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.Play("MusicAction");
+                AudioManager.Instance.FadeOut("MusicCalm", 1);
+            }
+
+            int enemiesToSpawn = Wave * 3 + 3;
             while (enemiesToSpawn > 0)
             {
-                //Enemy enemy = Instantiate(EnemyPrefabs[0], EnemySpawnPivot.position, Quaternion.identity, EnemyWrapper);
-                //enemy.Rank = enemiesToSpawn;
+                Enemy enemy = Instantiate(EnemyPrefabs[0], EnemySpawnPivot.position, Quaternion.identity, EnemyWrapper);
+                enemy.Rank = enemiesToSpawn;
                 enemiesToSpawn--;
 
-                print("spawn enemy");
+
+                Unit unemy = enemy.gameObject.GetComponent<Unit>();
+                if (unemy != null)
+                {
+                    unemy.GetTo(HomeTower.position);
+                }
+
                 yield return new WaitForSeconds(TimeBetweenEnemySpawns);
             }
 
             Wave++;
 
-            AudioManager.Instance.Play("MusicCalm");
-            AudioManager.Instance.FadeOut("MusicAction", 1);
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.Play("MusicCalm");
+                AudioManager.Instance.FadeOut("MusicAction", 1);
+            }
 
             int cooldown = TimeBetweenWaves;
             while (cooldown > 0)

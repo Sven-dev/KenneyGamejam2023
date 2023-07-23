@@ -24,6 +24,18 @@ PrefabInstance:
       value: Enemy Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4342403805718608018, guid: 27f19277411816f469807bf76b85149f, type: 3}
+      propertyPath: m_Speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342403805718608018, guid: 27f19277411816f469807bf76b85149f, type: 3}
+      propertyPath: m_Acceleration
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342403805718608018, guid: 27f19277411816f469807bf76b85149f, type: 3}
+      propertyPath: m_AngularSpeed
+      value: 160
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342403805718608018, guid: 27f19277411816f469807bf76b85149f, type: 3}
       propertyPath: m_WalkableMask
       value: 16
       objectReference: {fileID: 0}
@@ -73,3 +85,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27f19277411816f469807bf76b85149f, type: 3}
+--- !u!1 &6462466710569020552 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3651387189437236688, guid: 27f19277411816f469807bf76b85149f, type: 3}
+  m_PrefabInstance: {fileID: 7711040480679651672}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6276440760189933448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6462466710569020552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce71347f288bc0640a874738a31f5c80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Rank: 0
+  HealthPoints: 10
+  Damage: 1
