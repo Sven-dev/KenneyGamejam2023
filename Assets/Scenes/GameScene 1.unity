@@ -1087,7 +1087,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 50, y: -217.45, z: 0}
 --- !u!1001 &427629543
 PrefabInstance:
@@ -2396,6 +2396,10 @@ PrefabInstance:
       propertyPath: OnTimerUpdate.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 751051951}
+    - target: {fileID: 2007146403483187822, guid: 0eefd29398e2c8a4b84208c82a90d73a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2007146403579576784, guid: 0eefd29398e2c8a4b84208c82a90d73a, type: 3}
       propertyPath: OnHealthChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3331,7 +3335,7 @@ Transform:
   - {fileID: 726271412}
   - {fileID: 505259479}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1471986069
 PrefabInstance:
