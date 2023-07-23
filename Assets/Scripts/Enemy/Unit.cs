@@ -5,13 +5,14 @@ using UnityEngine.AI;
 
 public class Unit : MonoBehaviour
 {
-    
 
+    Animator anim = null;
     NavMeshAgent agent = null;
 
     void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        anim = GetComponentInChildren<Animator>();
     }
 
     // Start is called before the first frame update
@@ -20,13 +21,15 @@ public class Unit : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public void UpdateAnimation(bool _build)
     {
-        
+        if (anim != null)
+        {
+            anim.SetFloat("Speed", agent.velocity.magnitude);
+            anim.SetBool("Holding", _build);
+        }
     }
-
-
 
     GameObject destination = null;
 

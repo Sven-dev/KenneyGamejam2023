@@ -12,6 +12,10 @@ public class CanvasManager : MonoBehaviour
     [SerializeField]
     Sprite[] TowIcons = null;
 
+    [SerializeField] 
+    GameObject GameOverScreen;
+
+
     #region Instance
     //put instance stuff here
     private static CanvasManager _Instance;
@@ -36,6 +40,19 @@ public class CanvasManager : MonoBehaviour
     }
 
     #endregion
+    
+    public void GameOver(bool _died)
+    {
+        GameOverScreen.SetActive(_died);
+    }
+
+    public void GoBackToMenu()
+    {
+        if (LevelManager.Instance != null)
+        {
+            LevelManager.Instance.LoadLevel(1, Transition.Crossfade);
+        }
+    }
 
     public void CallTower(int num)
     {

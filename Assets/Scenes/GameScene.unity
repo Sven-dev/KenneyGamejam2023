@@ -3118,10 +3118,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -5.6
       objectReference: {fileID: 0}
-    - target: {fileID: 6106442679866859519, guid: 14a35220c11e510438bd466ccb5320e3, type: 3}
-      propertyPath: orthographic size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 6106442680913276746, guid: 14a35220c11e510438bd466ccb5320e3, type: 3}
       propertyPath: m_RootOrder
       value: 9

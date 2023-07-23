@@ -45,6 +45,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controlledUnit: {fileID: 0}
+  TowerTypes:
+  - {fileID: 5099227262567829071, guid: 5a18249e1e20117499e77218f3f774c5, type: 3}
+  - {fileID: 8003014912288386448, guid: 6cede2e65d6eacd4a9f9908a63bc6fb2, type: 3}
+  - {fileID: 5737301681387013199, guid: 1fc89b2fcd0eda842b5bf2fcc3e5d3d7, type: 3}
+  - {fileID: 236003350866929322, guid: 6ae8797246f35fd4f864a3b7e1efa690, type: 3}
+  - {fileID: 43315777009508530, guid: 235374b8a0479e847b59b1e4a9a9ac83, type: 3}
+  - {fileID: 3585688920756654559, guid: 7ddf71689ec4a9441acf73133e6b2e24, type: 3}
 --- !u!114 &4607227724394005028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,5 +80,5 @@ MonoBehaviour:
   layerGrass:
     serializedVersion: 2
     m_Bits: 512
-  typeOne: 0
+  typeOne: 6
   typeTwo: 5

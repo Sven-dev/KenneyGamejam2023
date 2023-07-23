@@ -460,7 +460,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: e5bbcdf29b2acaa4787b6d809ef442da, type: 2}
     - target: {fileID: 3525089369674633004, guid: 90a6cfb90fd0ec54b9b1016244c593c7, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3733376821963204121, guid: 90a6cfb90fd0ec54b9b1016244c593c7, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -488,7 +488,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4673087898514540502, guid: 90a6cfb90fd0ec54b9b1016244c593c7, type: 3}
       propertyPath: Damage
-      value: 1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 4673087898514540502, guid: 90a6cfb90fd0ec54b9b1016244c593c7, type: 3}
       propertyPath: Cooldown
@@ -664,9 +664,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90a6cfb90fd0ec54b9b1016244c593c7, type: 3}
+--- !u!1 &236003350866929322 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5610258257420496103, guid: 90a6cfb90fd0ec54b9b1016244c593c7, type: 3}
+  m_PrefabInstance: {fileID: 5664921285754980941}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4909582132568393265 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 774479544280255612, guid: 90a6cfb90fd0ec54b9b1016244c593c7, type: 3}
+  m_PrefabInstance: {fileID: 5664921285754980941}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4824799220815259782 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 894235766652134091, guid: 90a6cfb90fd0ec54b9b1016244c593c7, type: 3}
   m_PrefabInstance: {fileID: 5664921285754980941}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &2643080711374444809 stripped
@@ -674,3 +684,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7652684502804763460, guid: 90a6cfb90fd0ec54b9b1016244c593c7, type: 3}
   m_PrefabInstance: {fileID: 5664921285754980941}
   m_PrefabAsset: {fileID: 0}
+--- !u!136 &533402861719189480
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236003350866929322}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.2
+  m_Height: 1.2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.6, z: 0}
+--- !u!95 &3337045823709967553
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4824799220815259782}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7a88ac3c92ebbc84d9468e5871c83ea4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -85,14 +85,6 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4342403805718608018, guid: 27f19277411816f469807bf76b85149f, type: 3}
-      propertyPath: m_Speed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4342403805718608018, guid: 27f19277411816f469807bf76b85149f, type: 3}
-      propertyPath: m_AngularSpeed
-      value: 5000
-      objectReference: {fileID: 0}
-    - target: {fileID: 4342403805718608018, guid: 27f19277411816f469807bf76b85149f, type: 3}
       propertyPath: m_WalkableMask
       value: 7
       objectReference: {fileID: 0}

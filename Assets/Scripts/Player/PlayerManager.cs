@@ -38,6 +38,11 @@ public class PlayerManager : MonoBehaviour
     [SerializeField]
     Unit controlledUnit = null;
 
+    [SerializeField]
+    GameObject[] TowerTypes = null;
+
+    bool buildMode = false;
+
     private void Start()
     {
         if (playerControls == null)
@@ -63,11 +68,20 @@ public class PlayerManager : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+         controlledUnit.UpdateAnimation(buildMode);
+    }
+
     private void OnDestroy()
     {
         if (_Instance == this) _Instance = null;
     }
 
+    public void SetBuildMode(bool _mode)
+    {
+        buildMode = _mode;
+    }
 
     public void CommandUnit(Vector3 _at, GameObject _destination = null)
     {
@@ -117,6 +131,40 @@ public class PlayerManager : MonoBehaviour
         return inventory.SelectTower(num);
     }
 
+    public bool PickUpTower(GameObject _tower)
+    {
+        if (inventory != null && TowerTypes.Length > 0)
+        {
+            Tower towStats = _tower.GetComponentInChildren<Tower>();
+            int towType = 0;
+            if (towStats.GetAttack() == Attack.AreaOfEffect)
+            { towType = 3; }
+
+            switch (towStats.GetElement())
+            {
+                case Element.Fire:
+                    towType += 1;
+                    break;
+                case Element.Ice:
+                    towType += 2;
+                    break;
+                default:
+                    break;
+            }
+
+
+
+            bool success = inventory.AddToInventory(TowerTypes[towType]);
+            if (CanvasManager.Instance != null)
+            {
+                CanvasManager.Instance.UpdateButtons(inventory.GetList());
+            }
+
+            return success;
+        }
+
+        return false;
+    }
     public bool InputToInventory(Unit _unit, GameObject _tower)
     {
         if (_unit == controlledUnit && inventory != null)

@@ -20,8 +20,16 @@ PrefabInstance:
       value: Tower Cannon Fire Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5459937986931402110, guid: 5a18249e1e20117499e77218f3f774c5, type: 3}
+      propertyPath: Damage
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5459937986931402110, guid: 5a18249e1e20117499e77218f3f774c5, type: 3}
       propertyPath: Element
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5459937986931402110, guid: 5a18249e1e20117499e77218f3f774c5, type: 3}
+      propertyPath: Cooldown
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6906125900863682763, guid: 5a18249e1e20117499e77218f3f774c5, type: 3}
       propertyPath: m_RootOrder

@@ -140,7 +140,7 @@ public class PlayerControls : MonoBehaviour
                     {
                         Vector3 pinPoint = new Vector3();
                         pinPoint.x = Mathf.RoundToInt(hit.point.x);
-                        pinPoint.y = 0;
+                        pinPoint.y = 0.2f;
                         pinPoint.z = Mathf.RoundToInt(hit.point.z);
                         greenBuild.position = pinPoint;
                     }
@@ -353,12 +353,17 @@ public class PlayerControls : MonoBehaviour
 
             //RaycastHit is the collider that gets touched by the ray/laser
             RaycastHit hit;
+            RaycastHit towcheck;
             //Ray is the class that contains what we need for the laser
             Ray ray = Camera.main.ScreenPointToRay(mousePoint);
 
             if (Physics.Raycast(ray, out hit, 500.0f, layerGrass))
             {
-                if (BuildingFromInventory >= 0)
+                if (Physics.Raycast(ray, out towcheck, 500.0f, layerTower))
+                {
+                    //nothing!
+                }
+                else if (BuildingFromInventory >= 0)
                 {
                     Vector3 buildPOS = greenBuild.position;
                     GameObject BuildingTower = PlayerManager.Instance.RemoveFromInventory(BuildingFromInventory);
@@ -387,12 +392,17 @@ public class PlayerControls : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, 500.0f, layerTower))
             {
-                IInteractable interactable = hit.collider.GetComponent<IInteractable>();
-                if (interactable != null)
+                GameObject towObj = hit.collider.gameObject;
+
+                if (PlayerManager.Instance != null)
                 {
-
-
+                    if (PlayerManager.Instance.PickUpTower(towObj))
+                    {
+                        //success inserted to Inventory
+                        Destroy(towObj);
+                    }
                 }
+
             }
         }
     }
@@ -446,12 +456,16 @@ public class PlayerControls : MonoBehaviour
 
         greenCrys.SetActive(towID >= 3);
         greenProj.SetActive(towID < 3);
-
         BuildingFromInventory = num;
+
+        if (PlayerManager.Instance != null)
+        {
+            PlayerManager.Instance.SetBuildMode(true);
+        }
     }
     public void StopBuildMode()
     {
-        SetActionType(true, CommandType.Nothing);
+        SetActionType(true, CommandType.Select);
         SetActionType(false, CommandType.CommandUnit);
 
 
@@ -459,6 +473,11 @@ public class PlayerControls : MonoBehaviour
         if (CanvasManager.Instance != null)
         {
             CanvasManager.Instance.UndoCall();
+        }
+
+        if (PlayerManager.Instance != null)
+        {
+            PlayerManager.Instance.SetBuildMode(false);
         }
     }
 

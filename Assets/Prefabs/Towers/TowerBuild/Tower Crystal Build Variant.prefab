@@ -11,6 +11,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower Crystal Build Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 236003350866929322, guid: 6ae8797246f35fd4f864a3b7e1efa690, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 533402861719189480, guid: 6ae8797246f35fd4f864a3b7e1efa690, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 830707783645224453, guid: 6ae8797246f35fd4f864a3b7e1efa690, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -21,6 +29,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1156218129534878052, guid: 6ae8797246f35fd4f864a3b7e1efa690, type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1394908038783831340, guid: 6ae8797246f35fd4f864a3b7e1efa690, type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1755932694032011812, guid: 6ae8797246f35fd4f864a3b7e1efa690, type: 3}
@@ -71,6 +83,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3027749112159872619, guid: 6ae8797246f35fd4f864a3b7e1efa690, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3164596999133917549, guid: 6ae8797246f35fd4f864a3b7e1efa690, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3497063531197555991, guid: 6ae8797246f35fd4f864a3b7e1efa690, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -95,6 +115,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[2]
       value: 
       objectReference: {fileID: 2100000, guid: 25f92d2b2c33dc742b20f0a15632d736, type: 2}
+    - target: {fileID: 4824799220815259782, guid: 6ae8797246f35fd4f864a3b7e1efa690, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4849962932966464167, guid: 6ae8797246f35fd4f864a3b7e1efa690, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -102,6 +126,10 @@ PrefabInstance:
     - target: {fileID: 5317105285272242751, guid: 6ae8797246f35fd4f864a3b7e1efa690, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5701815142990198488, guid: 6ae8797246f35fd4f864a3b7e1efa690, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5727886167620661998, guid: 6ae8797246f35fd4f864a3b7e1efa690, type: 3}
       propertyPath: m_Enabled
@@ -115,6 +143,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 25f92d2b2c33dc742b20f0a15632d736, type: 2}
+    - target: {fileID: 8393194658617583381, guid: 6ae8797246f35fd4f864a3b7e1efa690, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9030361108207283284, guid: 6ae8797246f35fd4f864a3b7e1efa690, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -127,5 +159,13 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[2]
       value: 
       objectReference: {fileID: 2100000, guid: 25f92d2b2c33dc742b20f0a15632d736, type: 2}
+    - target: {fileID: 9046480654948530198, guid: 6ae8797246f35fd4f864a3b7e1efa690, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9112600637682468193, guid: 6ae8797246f35fd4f864a3b7e1efa690, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ae8797246f35fd4f864a3b7e1efa690, type: 3}
